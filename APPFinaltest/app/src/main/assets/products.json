@@ -1,0 +1,30 @@
+[
+  {
+    "name": "手機",
+    "productId": "P001",
+    "imageId": "phone1",
+    "price": 39000,
+    "description": "iPhone16"
+  },
+  {
+    "name": "筆電",
+    "productId": "L002",
+    "imageId": "laptop1",
+    "price": 29800,
+    "description": "輕薄高效筆電"
+  },
+  {
+    "name": "耳機",
+    "productId": "H003",
+    "imageId": "headphones1",
+    "price": 5900,
+    "description": "降噪耳機"
+  },
+  {
+    "name": "智慧手錶",
+    "productId": "S004",
+    "imageId": "smartwatch1",
+    "price": 18000,
+    "description": "多功能健康監測手錶"
+  }
+]

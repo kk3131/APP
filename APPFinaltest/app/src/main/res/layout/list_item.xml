@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- 商品圖片 -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:contentDescription="Product Image"
+        android:layout_marginEnd="8dp" />
+
+    <!-- 商品名稱 -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_alignTop="@id/imageView"
+        android:text="商品名稱"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- 商品價格 -->
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="4dp"
+        android:text="價格"
+        android:textColor="#FF5722" />
+</RelativeLayout>
