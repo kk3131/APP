@@ -37,6 +37,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         holder.imageView.setImageResource(product.getImgId());
         holder.nameTextView.setText(product.getName());
         holder.priceTextView.setText(String.format("$%.2f", product.getPrice()));
+        holder.test.setText(product.getTest());
 
         // 設定點擊事件
         holder.itemView.setOnClickListener(v -> {
@@ -46,6 +47,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
             intent.putExtra("description", product.getDescription());
             intent.putExtra("price", product.getPrice());
             intent.putExtra("imageId", product.getImgId());
+            intent.putExtra("test",product.getTest());
             context.startActivity(intent);
         });
     }
@@ -59,12 +61,14 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         public ImageView imageView;
         public TextView nameTextView;
         public TextView priceTextView;
+        public TextView test;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
             nameTextView = itemView.findViewById(R.id.textView);
             priceTextView = itemView.findViewById(R.id.priceTextView);
+            test=itemView.findViewById(R.id.test);
         }
     }
 }

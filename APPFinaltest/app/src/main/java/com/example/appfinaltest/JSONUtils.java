@@ -31,8 +31,9 @@ public class JSONUtils {
                 int imageId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
                 double price = obj.getDouble("price");
                 String description = obj.getString("description");
+                String test= obj.getString("test");
 
-                productList.add(new MyListData(name, imageId, description, productId, price));
+                productList.add(new MyListData(name, imageId, description, productId, price,test));
             }
         } catch (Exception e) {
             e.printStackTrace();
