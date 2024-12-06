@@ -6,7 +6,7 @@ public class MyListData {
     private String description; // 商品描述
     private String productId;   // 商品編號
     private double price;       // 商品價格
-    private  String test;
+    private  String test;       // 評價
 
     public MyListData(String name, int imageId, String description, String productId, double price,String test) {
         this.name = name;

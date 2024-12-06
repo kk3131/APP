@@ -1,6 +1,5 @@
 package com.example.appfinaltest;
 
-
 import android.content.Context;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,7 +13,7 @@ public class JSONUtils {
     public static List<MyListData> loadProducts(Context context) {
         List<MyListData> productList = new ArrayList<>();
         try {
-            InputStream is = context.getAssets().open("products.json");
+            InputStream is = context.getAssets().open("12130126_json.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

@@ -1,9 +1,11 @@
 package com.example.appfinaltest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
@@ -13,31 +15,36 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        // 接收從 MainActivity 傳遞過來的數據
+
         String name = getIntent().getStringExtra("name");
         String productId = getIntent().getStringExtra("productId");
         String description = getIntent().getStringExtra("description");
         double price = getIntent().getDoubleExtra("price", 0.0);
         int imageId = getIntent().getIntExtra("imageId", 0);
+        String studentInfo = getIntent().getStringExtra("studentInfo");
 
-        // 綁定視圖
+
         TextView nameTextView = findViewById(R.id.nameTextView);
         TextView productIdTextView = findViewById(R.id.productIdTextView);
         TextView priceTextView = findViewById(R.id.priceTextView);
         TextView descriptionTextView = findViewById(R.id.descriptionTextView);
+        TextView studentInfoTextView = findViewById(R.id.student_info);
         ImageView productImageView = findViewById(R.id.productImageView);
         Button backButton = findViewById(R.id.backButton);
+        Button addToCartButton = findViewById(R.id.addToCartButton);
 
-        // 設定資料到視圖
+
         nameTextView.setText("品名: " + name);
         productIdTextView.setText("編號: " + productId);
         priceTextView.setText(String.format("價格: $%.2f", price));
         descriptionTextView.setText("描述: " + description);
+        studentInfoTextView.setText("12130126 劉芳妤");
         productImageView.setImageResource(imageId);
 
-        // 返回按鈕點擊事件
-        backButton.setOnClickListener(v -> {
-            // 結束當前活動，返回到上一個活動
+        backButton.setOnClickListener(v -> finish());
+        addToCartButton.setOnClickListener(v -> {
+
+            Toast.makeText(this, name + " 產品已經被加入購物車", Toast.LENGTH_SHORT).show();
             finish();
         });
     }
