@@ -2,6 +2,7 @@ package com.example.appfinaltest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,14 +16,13 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-
+        String test = getIntent().getStringExtra("test");
         String name = getIntent().getStringExtra("name");
         String productId = getIntent().getStringExtra("productId");
         String description = getIntent().getStringExtra("description");
         double price = getIntent().getDoubleExtra("price", 0.0);
         int imageId = getIntent().getIntExtra("imageId", 0);
         String studentInfo = getIntent().getStringExtra("studentInfo");
-
 
         TextView nameTextView = findViewById(R.id.nameTextView);
         TextView productIdTextView = findViewById(R.id.productIdTextView);
@@ -32,7 +32,7 @@ public class SecondActivity extends AppCompatActivity {
         ImageView productImageView = findViewById(R.id.productImageView);
         Button backButton = findViewById(R.id.backButton);
         Button addToCartButton = findViewById(R.id.addToCartButton);
-
+        Button goToCartButton = findViewById(R.id.goToCartButton);
 
         nameTextView.setText("品名: " + name);
         productIdTextView.setText("編號: " + productId);
@@ -42,10 +42,22 @@ public class SecondActivity extends AppCompatActivity {
         productImageView.setImageResource(imageId);
 
         backButton.setOnClickListener(v -> finish());
-        addToCartButton.setOnClickListener(v -> {
 
-            Toast.makeText(this, name + " 產品已經被加入購物車", Toast.LENGTH_SHORT).show();
-            finish();
+        addToCartButton.setOnClickListener(v -> {
+            Log.d("SecondActivity", "Add to Cart button clicked");
+
+            MyListData product = new MyListData(name, imageId, description, productId, price, test);
+
+            //將商品加入購物車
+            Cart.getInstance().addItem(product);
+
+
+            Toast.makeText(this, name + " 已經被加入購物車", Toast.LENGTH_SHORT).show();
+        });
+
+        goToCartButton.setOnClickListener(v -> {
+            Intent intent = new Intent(SecondActivity.this, CartActivity.class);
+            startActivity(intent);
         });
     }
 }

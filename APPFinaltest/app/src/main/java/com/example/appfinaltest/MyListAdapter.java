@@ -30,16 +30,16 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        // 獲取當前商品
+
         MyListData product = productList.get(position);
 
-        // 綁定數據到視圖
+
         holder.imageView.setImageResource(product.getImgId());
         holder.nameTextView.setText(product.getName());
         holder.priceTextView.setText(String.format("$%.2f", product.getPrice()));
         holder.test.setText(product.getTest());
 
-        // 設定點擊事件
+        //設定點擊事件
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, SecondActivity.class);
             intent.putExtra("name", product.getName());

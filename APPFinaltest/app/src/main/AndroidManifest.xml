@@ -24,6 +24,9 @@
         <activity
             android:name=".SecondActivity"
             android:exported="true" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
