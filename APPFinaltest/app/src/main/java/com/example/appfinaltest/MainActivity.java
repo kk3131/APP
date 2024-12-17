@@ -1,6 +1,8 @@
 package com.example.appfinaltest;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,5 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
         MyListAdapter adapter = new MyListAdapter(productList, this);
         recyclerView.setAdapter(adapter);
+
+        Button goToCartButton = findViewById(R.id.goToCartButton);
+        goToCartButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CartActivity.class);
+            startActivity(intent);
+        });
     }
 }

@@ -100,11 +100,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addToCartButton" />
 
+
     <Button
         android:id="@+id/goToCartButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="前往購物車"
-        android:layout_marginTop="16dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="91dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Go to Cart"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cart"
+        android:text="購物車"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

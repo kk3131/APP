@@ -24,6 +24,20 @@
     app:layout_constraintEnd_toEndOf="parent" />
 
 
+    <Button
+        android:id="@+id/goToCartButton"
+        android:layout_width="91dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Go to Cart"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cart"
+        android:text="購物車"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
@@ -36,4 +50,6 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
     tools:listitem="@layout/list_item" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

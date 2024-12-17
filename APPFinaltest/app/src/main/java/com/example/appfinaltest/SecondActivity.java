@@ -24,6 +24,8 @@ public class SecondActivity extends AppCompatActivity {
         int imageId = getIntent().getIntExtra("imageId", 0);
         String studentInfo = getIntent().getStringExtra("studentInfo");
 
+        //String category = getIntent().getStringExtra("category");
+
         TextView nameTextView = findViewById(R.id.nameTextView);
         TextView productIdTextView = findViewById(R.id.productIdTextView);
         TextView priceTextView = findViewById(R.id.priceTextView);
