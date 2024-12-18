@@ -19,7 +19,7 @@ private static final int DATABASE_VERSION=1;
     static int version;
     final String DATABASE_CREATE="create table "
             +TABLE_COMMENTS+"("+COLUMN_ID
-            +"integer primary key autoincrement, "+COLUMN_COMMENT
+            +"integer primary key autoincrement, "+COLUMN_COMMENT  //看55:00
             +" text not null);";
     public MySQLiteHelper(@Nullable Context context){
         super(context,name, null, version);
