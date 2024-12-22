@@ -20,6 +20,9 @@ public class CartActivity extends AppCompatActivity {
         TextView totalTextView = findViewById(R.id.totalTextView);
         Button checkoutButton = findViewById(R.id.checkoutButton);
 
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(v -> finish());
+
         cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // 獲取購物車中的商品列表
