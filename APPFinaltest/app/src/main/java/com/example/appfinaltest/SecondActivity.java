@@ -55,6 +55,8 @@ public class SecondActivity extends AppCompatActivity {
 
 
             Toast.makeText(this, name + " 已經被加入購物車", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(SecondActivity.this, MainActivity.class);//自動回到商品瀏覧頁面
+            startActivity(intent);
         });
 
         goToCartButton.setOnClickListener(v -> {
