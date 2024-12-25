@@ -18,14 +18,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //清空資料庫，避免資料重複出現多次
+        SQLiteHelper dbHelper = new SQLiteHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.execSQL("DELETE FROM products");
+        db.close();
 
-        // 將 JSON 資料載入 SQLite 資料庫
+        //將 JSON 資料載入 SQLite 資料庫
         JSONUtils.loadProductsToDatabase(this);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        List<MyListData> productList = loadProductsFromDatabase(); // 從資料庫加載資料
+        List<MyListData> productList = loadProductsFromDatabase(); //從資料庫加載資料
 
         MyListAdapter adapter = new MyListAdapter(productList, this);
         recyclerView.setAdapter(adapter);
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // 從資料庫查詢商品資料
+    //從資料庫查詢商品資料
     private List<MyListData> loadProductsFromDatabase() {
         List<MyListData> productList = new ArrayList<>();
         SQLiteHelper dbHelper = new SQLiteHelper(this);
